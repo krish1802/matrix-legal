@@ -1,33 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { newsletterAPI } from '../services/api';
 import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
-  const [email, setEmail] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    
-    if (!email) {
-      toast.error('Please enter your email');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      await newsletterAPI.subscribe(email);
-      toast.success('Successfully subscribed to newsletter!');
-      setEmail('');
-    } catch (error) {
-      toast.error(error.response?.data?.error || 'Failed to subscribe');
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <footer className="bg-brown-darkest text-beige border-t border-brown-dark/20">
       {/* Legal Disclaimer */}
@@ -45,7 +20,7 @@ const Footer = () => {
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* About Section */}
           <div>
             <div className="mb-4">
@@ -113,31 +88,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="font-serif text-lg font-bold text-gold-light mb-4">Newsletter</h4>
-            <p className="text-beige text-sm mb-4">
-              Subscribe to receive legal updates and insights
-            </p>
-            <form onSubmit={handleSubscribe} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email address"
-                className="w-full px-4 py-2 bg-cream/10 border border-gold/20 text-cream placeholder-brown text-sm focus:outline-none focus:border-gold transition-colors"
-                disabled={loading}
-              />
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full px-4 py-2 bg-gold text-brown-darkest font-semibold text-sm tracking-wide uppercase hover:bg-gold-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
-          </div>
         </div>
 
         {/* Office Locations */}
@@ -145,15 +95,12 @@ const Footer = () => {
           <h4 className="font-serif text-lg font-bold text-gold-light mb-4 text-center">
             Our Offices
           </h4>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+          <div className="flex justify-center gap-8">
             {[
               { city: 'New Delhi', state: 'NCR' },
-              { city: 'Kolkata', state: 'West Bengal' },
-              { city: 'Patna', state: 'Bihar' },
-              { city: 'Allahabad', state: 'Uttar Pradesh' },
-              { city: 'Ranchi', state: 'Jharkhand' }
+              { city: 'Patna', state: 'Bihar' }
             ].map((office) => (
-              <div key={office.city} className="text-beige">
+              <div key={office.city} className="text-beige text-center">
                 <p className="font-semibold text-sm">{office.city}</p>
                 <p className="text-xs text-brown-light">{office.state}</p>
               </div>
