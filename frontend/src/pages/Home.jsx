@@ -59,7 +59,7 @@ const Home = () => {
     }
   ];
 
-  const offices = ['New Delhi', 'Kolkata', 'Patna', 'Allahabad', 'Ranchi'];
+  const offices = ['New Delhi', 'Patna'];
 
   return (
     <div className="pt-20">
@@ -251,7 +251,7 @@ const Home = () => {
             Pan-India presence with unrivalled outreach in Northern India
           </p>
           
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {offices.map((office, index) => (
               <motion.div
                 key={index}
@@ -259,7 +259,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-beige-light p-6 hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-beige-dark hover:border-gold"
+                className="bg-beige-light p-6 w-40 hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-beige-dark hover:border-gold"
               >
                 <h3 className="font-serif text-xl font-bold text-brown-darkest">{office}</h3>
               </motion.div>
