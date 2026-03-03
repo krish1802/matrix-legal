@@ -255,7 +255,7 @@ const Clients = () => {
                 Contact Us
               </Link>
               <a
-                href="tel:+91XXXXXXXXXX"
+                href="tel:+91-011-41600349"
                 className="inline-block px-10 py-4 border-2 border-brown-darkest text-brown-darkest font-semibold tracking-wider uppercase text-sm hover:bg-brown-darkest hover:text-cream transition-all duration-300"
               >
                 <FaPhone className="inline mr-2" />
