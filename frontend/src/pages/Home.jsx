@@ -122,7 +122,7 @@ const Home = () => {
               <div className="text-sm tracking-wider uppercase text-brown font-medium">Years Experience</div>
             </div>
             <div>
-              <div className="font-serif text-4xl font-extrabold text-gold mb-1">5</div>
+              <div className="font-serif text-4xl font-extrabold text-gold mb-1">2</div>
               <div className="text-sm tracking-wider uppercase text-brown font-medium">Office Locations</div>
             </div>
             <div>
