@@ -97,19 +97,20 @@ const Team = () => {
     {
       name: 'Mr. Akshay Tripathi',
       position: 'Advocate',
-      experience: 'Experienced',
       specialization: 'General Practice',
       description: 'Advocate with expertise in various legal matters.',
       location: 'Patna'
     },
     {
       name: 'Himanshu Ranjan',
-      specialization: 'Genearl Practice',
+      position: 'Junior',
+      specialization: 'General Practice',
       location: 'Patna'
     },
     {
       name: 'Shubham Kumar',
-      specialization: 'Genearl Practice',
+      position: 'Junior',
+      specialization: 'General Practice',
       location: 'Patna'
     }
   ];
@@ -166,7 +167,9 @@ const Team = () => {
                     <p className="text-gold font-semibold text-lg mb-2">{member.position}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-brown font-semibold">{member.experience}</p>
+                    {member.experience && (
+                      <p className="text-sm text-brown font-semibold">{member.experience}</p>
+                    )}
                     <p className="text-xs text-brown-light">{member.location}</p>
                   </div>
                 </div>
@@ -213,7 +216,9 @@ const Team = () => {
                     {member.name}
                   </h3>
                   <p className="text-gold font-semibold">{member.position}</p>
-                  <p className="text-sm text-brown mt-1">{member.experience} Experience</p>
+                  {member.experience && (
+                    <p className="text-sm text-brown mt-1">{member.experience} Experience</p>
+                  )}
                 </div>
                 
                 <div className="mb-3">
@@ -223,9 +228,11 @@ const Team = () => {
                   <p className="text-sm text-brown-dark">{member.specialization}</p>
                 </div>
 
-                <p className="text-sm text-brown-dark leading-relaxed">
-                  {member.description}
-                </p>
+                {member.description && (
+                  <p className="text-sm text-brown-dark leading-relaxed">
+                    {member.description}
+                  </p>
+                )}
 
                 <div className="mt-4 pt-4 border-t border-beige-dark">
                   <p className="text-xs text-brown-light">

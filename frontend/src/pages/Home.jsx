@@ -253,16 +253,17 @@ const Home = () => {
           
           <div className="flex flex-wrap justify-center gap-6">
             {offices.map((office, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="bg-beige-light p-6 w-40 hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-beige-dark hover:border-gold"
-              >
-                <h3 className="font-serif text-xl font-bold text-brown-darkest">{office}</h3>
-              </motion.div>
+              <Link to="/contact" key={index}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="bg-beige-light p-6 w-40 hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-beige-dark hover:border-gold cursor-pointer"
+                >
+                  <h3 className="font-serif text-xl font-bold text-brown-darkest">{office}</h3>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
