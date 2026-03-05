@@ -59,7 +59,7 @@ const Team = () => {
     {
       name: 'Ms. Maria Nazir',
       position: 'Associate',
-      experience: '8+ years',
+      experience: '14+ years',
       specialization: 'High Court, District Court & Consumer Forum',
       description: 'Advocate with corporate experience specializing in High Court, District Court and consumer forum matters.',
       location: 'Patna'
@@ -67,7 +67,7 @@ const Team = () => {
     {
       name: 'Mr. Amit Kumar Singh',
       position: 'Associate',
-      experience: '9+ years',
+      experience: '14+ years',
       specialization: 'District Court & Consumer Forum',
       description: 'Advocate with experience in District Court and consumer forum proceedings.',
       location: 'Patna'
@@ -75,7 +75,7 @@ const Team = () => {
     {
       name: 'Mr. Bhola Shankar',
       position: 'Associate',
-      experience: '7+ years',
+      experience: '8+ years',
       specialization: 'DRT, RERA & District Courts',
       description: 'Advocate specializing in Debt Recovery Tribunal, RERA Authority and District Courts.',
       location: 'Patna'
@@ -83,7 +83,6 @@ const Team = () => {
     {
       name: 'Md. Farooq',
       position: 'Advocate',
-      experience: 'Experienced',
       specialization: 'General Practice',
       description: 'Advocate with expertise in various legal matters.',
       location: 'Patna'
@@ -91,7 +90,6 @@ const Team = () => {
     {
       name: 'Mr. Yash Anand',
       position: 'Advocate',
-      experience: 'Experienced',
       specialization: 'General Practice',
       description: 'Advocate with expertise in various legal matters.',
       location: 'Patna'
@@ -105,11 +103,13 @@ const Team = () => {
       location: 'Patna'
     },
     {
-      name: 'Ms. Surabhi Nirmal',
-      position: 'Advocate',
-      experience: 'Experienced',
-      specialization: 'General Practice',
-      description: 'Advocate with expertise in various legal matters.',
+      name: 'Himanshu Ranjan',
+      specialization: 'Genearl Practice',
+      location: 'Patna'
+    },
+    {
+      name: 'Shubham Kumar',
+      specialization: 'Genearl Practice',
       location: 'Patna'
     }
   ];
