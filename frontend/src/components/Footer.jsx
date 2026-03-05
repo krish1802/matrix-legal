@@ -97,13 +97,17 @@ const Footer = () => {
           </h4>
           <div className="flex justify-center gap-8">
             {[
-              { city: 'New Delhi', state: 'NCR' },
-              { city: 'Patna', state: 'Bihar' }
+              { city: 'New Delhi', state: 'NCR', anchor: 'new-delhi' },
+              { city: 'Patna', state: 'Bihar', anchor: 'patna' }
             ].map((office) => (
-              <div key={office.city} className="text-beige text-center">
-                <p className="font-semibold text-sm">{office.city}</p>
+              <Link
+                key={office.city}
+                to={`/contact#${office.anchor}`}
+                className="text-beige text-center hover:text-gold transition-colors duration-200 group"
+              >
+                <p className="font-semibold text-sm group-hover:text-gold">{office.city}</p>
                 <p className="text-xs text-brown-light">{office.state}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

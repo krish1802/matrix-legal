@@ -4,11 +4,24 @@ import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
 const Contact = () => {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // If there's a hash in the URL, scroll to that office section
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        // Small timeout to let the page render first
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const offices = [
     {
+      id: 'new-delhi',
       city: 'New Delhi',
       state: 'National Capital Region',
       address: 'LGF, D-36, South Extension Part 2, New Delhi - 110049, Chamber No. 484, Patiala House Courts Complex, New Delhi - 110001',
@@ -16,6 +29,7 @@ const Contact = () => {
       email: 'contact@matrixlegal.in'
     },
     {
+      id: 'patna',
       city: 'Patna',
       state: 'Bihar',
       address: '102 A, 1st Floor, Block A, Om Nirmalaya Apartment, Parmanand Path, Nageshwar Colony, Boring Road, Patna - 800001, Chamber No. 309, 3rd Floor, Patna Civil Court, Patna - 800004',
@@ -145,11 +159,12 @@ const Contact = () => {
             {offices.map((office, index) => (
               <motion.div
                 key={index}
+                id={office.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white p-8 w-full max-w-sm shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 border-beige-dark hover:border-gold"
+                className="bg-white p-8 w-full max-w-sm shadow-md hover:shadow-xl transition-shadow duration-300 border-t-4 border-beige-dark hover:border-gold scroll-mt-24"
               >
                 <h3 className="font-serif text-2xl font-bold text-brown-darkest mb-1">
                   {office.city}

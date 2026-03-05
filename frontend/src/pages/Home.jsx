@@ -59,7 +59,10 @@ const Home = () => {
     }
   ];
 
-  const offices = ['New Delhi', 'Patna'];
+  const offices = [
+    { name: 'New Delhi', anchor: 'new-delhi' },
+    { name: 'Patna', anchor: 'patna' }
+  ];
 
   return (
     <div className="pt-20">
@@ -253,7 +256,7 @@ const Home = () => {
           
           <div className="flex flex-wrap justify-center gap-6">
             {offices.map((office, index) => (
-              <Link to="/contact" key={index}>
+              <Link to={`/contact#${office.anchor}`} key={index}>
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -261,7 +264,7 @@ const Home = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="bg-beige-light p-6 w-40 hover:bg-white hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-beige-dark hover:border-gold cursor-pointer"
                 >
-                  <h3 className="font-serif text-xl font-bold text-brown-darkest">{office}</h3>
+                  <h3 className="font-serif text-xl font-bold text-brown-darkest">{office.name}</h3>
                 </motion.div>
               </Link>
             ))}
